@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>給与手取り計算ナビ｜額面から手取りを概算</title>
+<meta name="description" content="額面年収から手取り額を無料で概算。社会保険料・所得税・住民税の内訳と手取り率を試算できます。給与にかかる税金と社会保険のしくみもやさしく解説します。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="site-title" href="index.html">給与手取り計算ナビ</a>
+    <nav class="site-nav">
+      <a href="index.html">ホーム</a>
+      <a href="index.html#articles">記事一覧</a>
+      <a href="about.html">運営者情報</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<header class="site-header">
+  <h1>給与手取り計算ナビ</h1>
+  <p class="tagline">額面年収から、手取りをざっくり概算。税金と社会保険のしくみもやさしく解説。</p>
+</header>
+
+<main>
+
+  <section class="card form-card">
+    <h2>給与手取り計算機</h2>
+    <p class="form-intro">額面年収（と扶養人数）を入力すると、社会保険料・所得税・住民税を差し引いた手取りの目安を概算します。</p>
+    <form id="sim-form" novalidate>
+      <div class="field">
+        <label for="income">額面年収</label>
+        <div class="input-wrap">
+          <input type="number" id="income" inputmode="numeric" min="1" step="1" placeholder="例：400" required>
+          <span class="unit">万円</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="dependents">扶養人数（任意）</label>
+        <div class="input-wrap">
+          <input type="number" id="dependents" inputmode="numeric" min="0" step="1" placeholder="例：0">
+          <span class="unit">人</span>
+        </div>
+        <p class="field-hint">16歳以上の控除対象扶養親族の人数。未入力の場合は0人として計算します。</p>
+      </div>
+      <p id="form-error" class="form-error" role="alert"></p>
+      <button type="submit" id="calc-btn">計算する</button>
+    </form>
+  </section>
+
+  <section id="result" class="result-area" hidden></section>
+
+  <section class="card disclaimer">
+    <h2>計算についての注意</h2>
+    <p>
+      この計算はあくまで概算です。社会保険料は収入の約15%として簡易計算しており、実際は協会けんぽの都道府県料率・標準報酬月額・年齢（40歳以上の介護保険）等で変わります。
+      住民税は標準税率（所得割10%＋均等割5,000円）で計算しており、お住まいの自治体で多少前後します。
+      扶養・生命保険料控除・iDeCoなど個別の控除は、扶養人数以外は反映していません（独身・扶養なし・基本的な控除のみを想定）。
+      正確な金額は給与明細や勤務先・税務署でご確認ください。
+    </p>
+  </section>
+
+  <section class="card" id="articles">
+    <h2>記事一覧</h2>
+    <div class="article-list">
+      <a class="article-card" href="article-01-gakumen-tedori.html"><span class="card-cat">基本</span><span class="card-title">額面と手取りはなぜ違う？</span></a>
+      <a class="article-card" href="article-02-shakai-hoken.html"><span class="card-cat">基本</span><span class="card-title">社会保険料の基本</span></a>
+      <a class="article-card" href="article-03-shotokuzei.html"><span class="card-cat">税金</span><span class="card-title">所得税の仕組み（累進課税）</span></a>
+      <a class="article-card" href="article-04-juminzei.html"><span class="card-cat">税金</span><span class="card-title">住民税の仕組み（社会人2年目に増える理由）</span></a>
+      <a class="article-card" href="article-05-kyuyo-kojo.html"><span class="card-cat">控除</span><span class="card-title">給与所得控除とは</span></a>
+      <a class="article-card" href="article-06-kojo.html"><span class="card-cat">控除</span><span class="card-title">基礎控除・扶養控除・配偶者控除</span></a>
+      <a class="article-card" href="article-07-nenmatsu-chosei.html"><span class="card-cat">手続き</span><span class="card-title">年末調整と確定申告の違い</span></a>
+      <a class="article-card" href="article-08-furusato.html"><span class="card-cat">手続き</span><span class="card-title">ふるさと納税で住民税が安くなる仕組み</span></a>
+      <a class="article-card" href="article-09-tedori-fueru-kojo.html"><span class="card-cat">控除</span><span class="card-title">手取りを増やす控除（iDeCo・生命保険料控除など）</span></a>
+      <a class="article-card" href="article-10-gakumen-agetemo.html"><span class="card-cat">基本</span><span class="card-title">額面を上げても手取りが増えない理由</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="about.html">運営者情報</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="disclaimer.html">免責事項</a>
+  </nav>
+  <p>&copy; 2026 給与手取り計算ナビ</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
